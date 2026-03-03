@@ -1,59 +1,139 @@
-# AngularPokedex
+# Angular PokeDex
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+Aplicación web desarrollada en Angular que consume la API pública de
+Pokémon (PokeAPI) para mostrar un listado interactivo de Pokémon con
+búsqueda, filtros y vista detallada.
 
-## Development server
+## 🎯 Objetivo del Proyecto
 
-To start a local development server, run:
+Este proyecto tiene como objetivo:
 
-```bash
+-   Practicar arquitectura moderna en Angular.
+-   Consumir APIs externas correctamente.
+-   Manejar estados de carga y errores.
+-   Implementar buenas prácticas de organización y control de versiones.
+-   Aplicar seguimiento profesional mediante GitHub Projects (Kanban +
+    Issues).
+
+------------------------------------------------------------------------
+
+## 🚀 Funcionalidades Planeadas (MVP)
+
+-   Listado de Pokémon (paginado).
+-   Skeleton loaders mientras carga la información.
+-   Búsqueda por nombre.
+-   Filtro por tipo.
+-   Página de detalle por Pokémon.
+-   Manejo de estados de error.
+-   Diseño responsive.
+
+------------------------------------------------------------------------
+
+## 🏗️ Arquitectura del Proyecto
+
+El proyecto utiliza una arquitectura organizada por responsabilidades:
+
+```text
+angular-pokedex/
+├─ src/
+│  ├─ app/                                 # Código principal de la aplicación
+│  │  ├─ app.config.ts                     # Configuración (standalone)
+│  │  ├─ app.routes.ts                     # Rutas principales
+│  │  ├─ app.ts                            # Componente raíz (AppComponent)
+│  │  ├─ shared/                           # Reutilizable en toda la app
+│  │  │  └─ ui/                            # Componentes UI genéricos (skeletons, empty-states, etc.)
+│  │  ├─ features/                         # Funcionalidades del producto
+│  │  │  └─ pages/                         # Páginas (rutas) del PokeDex
+│  │  │     ├─ pokemon-list/               # Home / listado
+│  │  │     │  ├─ pokemon-list.ts
+│  │  │     │  ├─ pokemon-list.html
+│  │  │     │  ├─ pokemon-list.css
+│  │  │     │  └─ pokemon-list.spec.ts
+│  │  │     └─ pokemon-details/            # Detalle de un Pokémon
+│  │  │        ├─ pokemon-details.ts
+│  │  │        ├─ pokemon-details.html
+│  │  │        ├─ pokemon-details.css
+│  │  │        └─ pokemon-details.spec.ts
+│  │  ├─ services/                         # Servicios (consumo de PokeAPI, lógica de datos)
+│  │  ├─ models/                           # Interfaces/tipos del dominio (Pokemon, Type, Ability, etc.)
+│  │  └─ adapters/                         # Adaptadores/mappers (API → modelos internos)
+│  ├─ main.ts                              # Bootstrap del cliente
+│  ├─ styles.css                           # Estilos globales
+│  └─ index.html
+├─ public/                                 # Estáticos
+│  └─ favicon.ico
+├─ angular.json
+├─ package.json
+├─ tsconfig.json
+└─ README.md
+```
+
+------------------------------------------------------------------------
+
+## 🧩 Convención de Commits
+
+Se utiliza el estándar Conventional Commits.
+
+Ejemplos:
+
+-   feat: agregar listado de pokemones
+-   fix: corregir error en respuesta de API
+-   refactor: mejorar separación de responsabilidades
+-   chore: configurar estructura inicial
+-   docs: actualizar README
+
+------------------------------------------------------------------------
+
+## 🛠️ Tecnologías Utilizadas
+
+-   Angular 21
+-   TypeScript
+-   CSS
+-   PokeAPI
+-   TailwindCss
+
+------------------------------------------------------------------------
+
+## 📦 Instalación y ejecución
+
+1.  Clonar repositorio:
+
+git clone `https://github.com/DevWilfredo/angular-pokedex`
+
+2.  Instalar dependencias:
+
+npm install
+
+3.  Ejecutar en entorno local:
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4.  Abrir en navegador:
 
-## Code scaffolding
+http://localhost:4200
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+------------------------------------------------------------------------
 
-```bash
-ng generate component component-name
-```
+## 📌 Roadmap del Proyecto
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+-   v0.1 -- Configuración inicial
+-   v0.2 -- Integración básica con API
+-   v0.3 -- Listado funcional
+-   v0.4 -- Página de detalle
+-   v1.0 -- MVP completo y deploy
 
-```bash
-ng generate --help
-```
+------------------------------------------------------------------------
 
-## Building
+## 🔮 Mejoras Futuras
 
-To build the project run:
+-   Cacheo de resultados
+-   Optimización de rendimiento
+-   Mejoras de accesibilidad
+-   Tests unitarios adicionales
+-   Animaciones
 
-```bash
-ng build
-```
+------------------------------------------------------------------------
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📄 Licencia
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Proyecto educativo.
