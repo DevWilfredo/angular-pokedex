@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './pokemon-list.html',
   styleUrl: './pokemon-list.css',
 })
-export class PokemonList {}
+export class PokemonList {
+
+}
